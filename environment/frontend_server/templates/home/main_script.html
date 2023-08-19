@@ -274,6 +274,9 @@
 	  const camera = this.cameras.main;
 	  camera.startFollow(player);
 	  camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+	  //camera.setSize(map.widthInPixels, map.heightInPixels);
+	  camera.setZoom(1.0);
+	  //console.log("Camera size: %f, %f ", map.widthInPixels, map.heightInPixels)
 	  cursors = this.input.keyboard.createCursorKeys();
 
 	  // *** SET UP PERSONAS *** 
@@ -344,7 +347,7 @@
 		pause_button.onclick = function(){
 			game_pause();
 		};
-
+		game_resume(); // no, we don't pause
 	  // *** MOVE CAMERA *** 
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
